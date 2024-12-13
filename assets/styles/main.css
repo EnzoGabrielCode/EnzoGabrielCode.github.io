@@ -688,7 +688,7 @@ footer p{
     }
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1500px){
     .header{
         padding: 1rem 15rem;
     }
