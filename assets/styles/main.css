@@ -1,16 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+:root, :root[data-theme="dark"]{
+    --primary-color: #f0f0f0;
+
+    --primary-bg-color: #111217;
+    --secondary-bg-color: #28292E;
+    --border-color: #28292E;
+
+    --title-color: #F0F0F0;
+    --text-color: #9A9A9A;
+    --link-color: #9A9A9A;
+    --icon-color: #C7C8C9;
+}
+
+:root[data-theme="light"]{
+    --primary-color: #0B0B0F;
+
+	--primary-bg-color: #E9E9E9;
+	--secondary-bg-color: #C7C8C9;
+	--primary-border-color: #C7C8C9;
+	--secondary-border-color: #9A9A9C;
+
+	--title-color: #0B0B0F;
+	--text-color: #28292E;
+	--link-color: #28292E;
+	--icon-color: #56575A;
+}
+
+html[data-theme="light"] .brand__logo,
+html[data-theme="light"] .brand__name{
+    filter: invert(1);
+}
 
 body{
     background-color: var(--primary-bg-color);
     font-family: "Inter", sans-serif;
+    color: var(--text-color);
 }
 
 a{
     text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover{
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 i{
     color: var(--icon-color);
+}
+
+b{
+    font-weight: 400;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+h1, h2, h3{
+    font-family: "League Spartan", sans-serif;
+    text-transform: uppercase;
+    color: var(--title-color);
+    font-weight: 200;
+}
+
+p{
+    font-size: 1.25rem;
+    text-align: justify;
 }
 
 .header{
@@ -20,16 +81,29 @@ i{
     align-items: center;
     width: 100%;
     padding: 0.5rem 1rem;
+    z-index: 2;
+}
+
+.header__toggle{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header__brand .brand__logo{
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.header__brand .brand__name{
+    width: 130px;
+    height: 12px;
 }
 
 #toggleTheme{
     font-size: 1.5rem;
     color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out .4s;
 }
 
 .menu{
@@ -60,7 +134,9 @@ i{
 }
 
 .menu__link.active .menu__icon, 
-.menu__link.active .menu__text{
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon, 
+.menu__link:hover .menu__text{
     color: var(--primary-color);
     font-weight: 600;
 }
@@ -78,8 +154,116 @@ i{
     text-transform: uppercase;
 }
 
+.header__nav{
+    display: none;
+}
+
+.menu--principal{
+    gap: 1rem;
+}
+
+.brand__name{
+    display: none;
+}
+
+.menu--social{
+    gap: 1rem;
+}
+
+.btn{
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: transparent;
+    border-radius: 3.125rem;
+    padding: 0.875rem 1rem;
+}
+
+.btn span, .btn i{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.btn--primary span{
+    color: var(--primary-color);
+}
+
+.btn--primary{
+    border: 1px solid var(--primary-color);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 1rem;
+}
+
+.main__content1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.habilidades{
+    display: flex;
+    flex-direction: column;
+    padding: 6.25rem 1rem 2rem 1rem;
+    background: var(--secondary-bg-color);
+    margin-top: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.habilidades h2{
+    text-transform: none;
+}
+
+footer{
+    margin-bottom: 5rem;
+}
+
+footer p{
+    font-size:  .875rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
 @media (min-width: 768px){
-    .menu--mobile{
+    .header{
+        position: fixed;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 6rem;
+        background: var(--primary-bg-color);
+    }
+
+    .nav--mobile{
         display: none;
+    }
+    .brand__logo{
+        display: none;
+    }
+    .brand__name{
+        display: flex;
+    }
+    .header__nav{
+        display: flex;
+    }
+
+    .header__nav,
+    .header__toggle{
+        min-width: 30%;
+    }
+
+    footer{
+        margin: 0;
+    }
+}
+
+@media (min-width: 1400px){
+    .header{
+        padding: 1rem 15rem;
     }
 }

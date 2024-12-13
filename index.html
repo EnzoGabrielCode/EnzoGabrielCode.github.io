@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +20,23 @@
 </head>
 <body>
     <header class="header">
+        <nav class="header__nav">
+            <ul class="menu menu--principal">
+                <li class="menu__item"><a class="menu__link active" href="#home"><span class="menu__text">HOME</span></a></li>
+                <li class="menu__item"><a class="menu__link" href="#projetos"><span class="menu__text">PROJETOS</span></a></li>
+                <li class="menu__item"><a class="menu__link" href="#sobre"><span class="menu__text">SOBRE</span></a></li>
+                <li class="menu__item"><a class="menu__link" href="#contato"><span class="menu__text">CONTATO</span></a></li>
+            </ul>
+        </nav>
         <div class="header__brand">
             <img class="brand__logo" src="assets/img/Vector-white.png" alt="Logo">
-
+            <img class="brand__name" src="assets/img/EnzoGabrielCode.png" alt="">
         </div>
-        <i id="toggleTheme" class="bi bi-sun"></i>
+        <div class="header__toggle">
+            <i id="toggleTheme" class="bi bi-sun"></i>
+        </div>
     </header>
-    <nav>
+    <nav class="nav--mobile">
         <ul class="menu menu--mobile">
             <li class="menu__item"><a class="menu__link active" href="#home"><i class="menu__icon bi bi-house-door"></i><span class="menu__text">HOME</span></a></li>
             <li class="menu__item"><a class="menu__link" href="#projetos"><i class="menu__icon bi bi-window-stack"></i><span class="menu__text">PROJETOS</span></a></li>
@@ -34,7 +44,28 @@
             <li class="menu__item"><a class="menu__link" href="#contato"><i class="menu__icon bi bi-envelope"></i><span class="menu__text">CONTATO</span></a></li>
         </ul>
     </nav>
-
-    <h1>Enzo Gabriel</h1>
+    <main>
+        <div class="main__content1">
+            <h1><b>mostre ao mundo o que você pode criar!</b></h1>
+            <p>Enzo Gabriel de Paula, Taubaté-SP, Desenvolvedor</p>
+            <ul class="menu menu--social">
+                <li><a class="menu__icon menu__link" href="https://github.com/EnzoGabrielCode"><i class="bi bi-github"></i></a></li>
+                <li><a class="menu__icon menu__link" href="https://www.linkedin.com/in/enzo-gabriel-de-paula-8795a8332/"><i class="bi bi-linkedin"></i></a></li>
+            </ul>
+            <button class="btn btn--primary">
+                <span>Ver projetos</span>
+                <i class="bi bi-arrow-down-right"></i>
+            </button>
+        </div>
+    </main>
+        <section class="habilidades">
+            <h2>Conhecimento nas principais tecnologias do mercado</h2>
+        </section>
+    <footer>
+        <p>
+            © 2024. Todos os Direitos Reservados. Enzo Gabriel de Paula. Desenvolvido por <a href="https://github.com/EnzoGabrielCode">EG</a>.
+        </p>
+    </footer>
+    <script src="./assets/scripts/scripts.js"></script>
 </body>
 </html>

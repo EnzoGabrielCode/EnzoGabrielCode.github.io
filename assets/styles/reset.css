@@ -5,16 +5,3 @@
     vertical-align: baseline;
     list-style: none;
 }
-
-:root{
-    --primary-color: #f0f0f0;
-
-    --primary-bg-color: #111217;
-    --secondary-bg-color: #28292E;
-    --border-color: #28292E;
-
-    --title-color: #9A9A9A;
-    --text-color: #9A9A9A;
-    --link-color: #9A9A9A;
-    --icon-color: #C7C8C9;
-}
